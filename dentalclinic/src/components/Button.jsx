@@ -1,11 +1,14 @@
 import React from 'react'
 
-const Button = ({className , text}) => {
+const Button = ({ className, text, onClick, type = "button" }) => {
   return (
-    <div>
-                <button className={`text-[var(--background)] box-shadow: 0 10px 30px rgba(0,0,0,0.08) lg:py-4 lg:font-bold lg:px-9 py-2 px-10 cursor-pointer  rounded-2xl  ${className}`}>{text}</button>
-      
-    </div>
+    <button
+      type={type}
+      onClick={onClick}
+      className={`text-[var(--background)] shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.12)] transition-all duration-300 lg:py-4 lg:font-bold lg:px-9 py-3 px-10 cursor-pointer rounded-2xl ${className}`}
+    >
+      {text}
+    </button>
   )
 }
 

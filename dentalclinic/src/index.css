@@ -7,3 +7,6 @@
   --heading: #0f172a;      /* Dark */
   --background: #ffffff;   /* White */
 }
+body {
+  font-family: 'Inter', sans-serif;
+}
