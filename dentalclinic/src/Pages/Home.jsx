@@ -1,6 +1,7 @@
 import React from 'react'
 import HomeContent from '../Contents/HomeContent'
 import AboutContents from '../Contents/AboutContents'
+import ServicesContents from '../Contents/ServicesContents'
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
   <>
 <HomeContent/>
 <AboutContents/>
+<ServicesContents/>
   </>
   )
 }

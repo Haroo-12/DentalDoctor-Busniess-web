@@ -83,6 +83,7 @@ const HomeContent = () => {
       src={heroimg}
       alt=""
       className="w-full h-full object-cover rounded-3xl shadow-xl"
+    
     />
 
     <div className="absolute top-6 left-6 bg-white px-4 py-2 rounded-xl shadow-lg">
