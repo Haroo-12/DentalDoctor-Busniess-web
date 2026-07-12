@@ -59,7 +59,7 @@ const ServicesContents = () => {
       <span className="text-teal-700  text-md font-bold">What We Offer</span>
     </div>
    <section className=" px-5 py-8">
-      <h1 className="font-serif font-bold text-4xl text-slate-900">
+      <h1 className=" font-bold text-4xl text-slate-900">
         Comprehensive Dental  Services
       </h1>
       <p className="text-[var(--text)] text-xl mt-4 max-w-xl">
@@ -73,17 +73,17 @@ const ServicesContents = () => {
       className="w-full sm:w-[48%] lg:w-[30%] bg-white shadow-2xl p-2 rounded-xl flex flex-col"
     >
       {/* Image */}
-    <div className="relative w-full">
+<div className="relative w-full">
   <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
     <img
       src={service.image}
       alt={service.title}
       className="w-full h-full object-cover"
     />
-  </div>
 
-  {/* Glow */}
-  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[80%] h-10 bg-gradient-to-r from-[#278981] via-[#14b8a6] to-[#278981] blur-2xl opacity-70 -z-10"></div>
+    {/* Glow overlay - only bottom portion */}
+    <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#278981]  to-[rgb(28,150,140)] to-transparent"></div>
+  </div>
 </div>
 
       {/* Content */}
