@@ -62,7 +62,7 @@ const ServicesContents = () => {
       <h1 className=" font-bold text-4xl text-slate-900">
         Comprehensive Dental  Services
       </h1>
-      <p className="text-[var(--text)] text-xl mt-4 max-w-xl">
+      <p className="text-[var(--text)] font-italic text-xl mt-4 max-w-xl">
         From prevention to restoration, we provide a full spectrum of dental treatments tailored to your needs.
       </p>
     </section>

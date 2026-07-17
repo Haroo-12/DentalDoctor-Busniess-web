@@ -56,7 +56,7 @@ const Gallery = () => {
     <div className='w-[95%]  mt-5 pt-10'>
              <div className="px-12">
          <div className=" mx-0  inline-flex w-fit items-center gap-2 bg-teal-50 border border-teal-700 rounded-full px-12 py-4 shadow-sm">
-      <span className="text-teal-700  text-md font-bold">Patient Reviews</span>
+      <span className="text-teal-700  text-md font-bold">Treatment Results</span>
     </div>
   <h2 className="text-3xl lg:text-5xl font-bold pt-8 text-[var(--heading)]">
     Smile Transformations
@@ -72,7 +72,7 @@ const Gallery = () => {
   {casesData.map((item) => (
     <div
       key={item.id}
-     className="group w-[96%] md:w-[48%] bg-white shadow-xl border border-gray-200 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(39,137,129,0.15)]"
+     className="group w-[96%] md:w-[45%] bg-white shadow-xl border border-gray-200 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(39,137,129,0.15)]"
     >
       {/* Before */}
       <div className="relative w-full h-[180px] p-1">

@@ -3,12 +3,39 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { Outlet, useSearchParams } from 'react-router-dom';
+import { Link, Outlet, useSearchParams } from 'react-router-dom';
 import logo  from '../assets/images/logo.webp'
 import Button from '../components/Button';
 import { BsList } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
+
 const Navbor = () => {
+const navborlinks = [
+    {
+        links : "/",
+        label :"Home",
+    },
+    {
+        links : "/about",
+        label : "About"
+    },
+    {
+        links : "/services",
+        label : "Services",
+    },
+    {
+        links : "/testomonials",
+        label : "Testomonials"
+    },
+    {
+        links : "cases",
+        label : "Cases"
+    },
+    {
+        llinks : "contact",
+        label : "Contact"
+    }
+]
 let [loading , setloading] = useState(true)
 function handleNav(){
     setloading(!loading)
@@ -34,14 +61,23 @@ function handleNav(){
                     </div>
                 </div>
             </div> */}
-            <div className='hidden lg:flex h-[100px] bg-white shadow justify-between gap-8 items-center'>
+            <div className='sticky top-0 z-10 hidden lg:flex h-[100px] bg-white shadow justify-between gap-8 items-center'>
                     <img src={logo} alt="" className='lg:block hidden w-[200px] h-[80px]'/>               
                 <div className='hidden lg:flex text-[var(--text)]  list-none gap-10 cursor-pointer'>
-                    <li>Home</li>
+                    {/* <li>Home</li>
                     <li>About</li>
                     <li>Service</li>
                     <li>Testomonials</li>
-                    <li>Cases</li>
+                    <li>Cases</li> */}
+                    {
+                        navborlinks.map((items , index)=>{
+                            return(
+                                <div key={index}>
+                                <Link to={items.links}>{items.label}</Link>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
 <Button text="Book Now" className="hidden lg:block bg-gradient-to-r from-[#278981]  to-[#1c968c] m-2"/>                
 
@@ -92,7 +128,7 @@ function handleNav(){
 
             </div>
 
-            <Outlet />
+        
         </>
     )
 }
