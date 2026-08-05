@@ -9,6 +9,7 @@ import Services from '../Pages/Services'
 import Testomonials from '../Pages/Testomonials'
 import Cases from '../Pages/Cases'
 import Contact from '../Pages/Contact'
+import GalleryCardDetail from '../GalleryComponents/GalleryCardDetail'
 
 const Routers = () => {
 const routes = createBrowserRouter([
@@ -37,7 +38,11 @@ const routes = createBrowserRouter([
               element : <Cases/>,
             },
             {
-              path :"/contact",
+              path : "/cases/:id",
+              element : <GalleryCardDetail/>
+            },
+            {
+              path : "/contact",
               element : <Contact/>
             }
         ],

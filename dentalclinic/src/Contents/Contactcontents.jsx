@@ -13,8 +13,13 @@ import {
   FaPhone
  } from "react-icons/fa";
 import Footer from '../Layout/Footer';
-import ContactPageComponent from '../components/ContactPageComponent';
-import ContactPageComponentTwo from '../components/ContactPageComponentTwo';
+
+import ContactPageComponentTwo from '../ContactComponents/ContactPageComponentTwo';
+import { useRef } from 'react';
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 const Contactcontents = () => {
     const branchData = {
   name: "Main (Qasimabad)",
@@ -67,13 +72,13 @@ const formFields = [
 }
 ];
   return (
-    <div className='flex justify-center flex-col items-center'>
+    <div className='flex justify-center flex-col items-center pt-8 lg:pt-15'>
       <div className='lg:w-[95%]  w-full  mt-10'>
- 
-<ContactPageComponentTwo/>
- {/* <ContactPageComponent/> */}
+ <ContactPageComponentTwo/>
+
+
       </div>
-{/* <Footer/> */}
+
     </div>
   )
 }

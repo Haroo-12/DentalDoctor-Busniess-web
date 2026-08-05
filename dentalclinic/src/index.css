@@ -6,6 +6,11 @@
   --text: #64748b;         /* Gray */
   --heading: #0f172a;      /* Dark */
   --background: #ffffff;   /* White */
+  --primary-gradient: linear-gradient(
+    135deg,
+    #278981,
+    #14b8a6
+  );
 }
 body {
   font-family: 'Inter', sans-serif;
@@ -15,4 +20,11 @@ body {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.backgroundcol{
+  background: linear-gradient(
+  135deg,
+  #278981,
+  #14b8a6
+);
 }

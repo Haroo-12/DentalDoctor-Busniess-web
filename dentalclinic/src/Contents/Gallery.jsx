@@ -12,6 +12,11 @@ import rootcanalafter from '../assets/casesimages/rootcanalafter.webp'
 import rootcanalbefore from '../assets/casesimages/rootcanalbefore.webp'
 import wisomtoothafter from '../assets/casesimages/wisdomtoothafter.webp'
 import wisdomtoothbefore from '../assets/casesimages/wisdomtoothbefore.webp'
+import GalleryCard from '../GalleryComponents/GalleryCard'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from 'react';
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const casesData = [
   {
     id: 1,
@@ -51,10 +56,29 @@ const casesData = [
   },
 ];
 const Gallery = () => {
+       const sectionRef = useRef();
+      const gallerycontentone = useRef(); 
+      
+        useGSAP(() => {
+        const tl = gsap.timeline();
+        gsap.from(gallerycontentone.current, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 1,
+          ease: "power3.out",
+            x:-50,
+          scrollTrigger: {
+            trigger: gallerycontentone.current,
+            start: "top 65%",   // jab element ka top, viewport ke 80% pe pohanche
+            // end: "top 50%",
+            toggleActions: "play none none reverse",
+          }
+        });
+      }, { scope: sectionRef });
   return (
-    <div className='w-full flex justify-center flex-col '>
-    <div className='w-[95%]  mt-5 pt-10'>
-             <div className="px-12">
+    <div className='w-full flex justify-center flex-col pt-10 lg:pt-18' ref={sectionRef}>
+    <div className='w-full lg:w-[95%]  mt-5 pt-10' ref={gallerycontentone}>
+             <div className="px-4 lg:px-12">
          <div className=" mx-0  inline-flex w-fit items-center gap-2 bg-teal-50 border border-teal-700 rounded-full px-12 py-4 shadow-sm">
       <span className="text-teal-700  text-md font-bold">Treatment Results</span>
     </div>
@@ -68,55 +92,7 @@ const Gallery = () => {
 </div>   
 
     </div>
-<div className="w-full flex flex-wrap justify-center gap-6 pt-10">
-  {casesData.map((item) => (
-    <div
-      key={item.id}
-     className="group w-[96%] md:w-[45%] bg-white shadow-xl border border-gray-200 rounded-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(39,137,129,0.15)]"
-    >
-      {/* Before */}
-      <div className="relative w-full h-[180px] p-1">
-        <img
-          src={item.beforeImage}
-          alt={`${item.treatment} Before`}
-          className="w-full h-full rounded-xl object-cover"
-        />
-
-        <span className="absolute top-3 left-3 bg-[#278981] text-white text-xs px-3 py-1 rounded-full font-semibold">
-          Before
-        </span>
-      </div>
-
-      {/* After */}
-      <div className="relative w-full h-[180px] p-1">
-        <img
-          src={item.afterImage}
-          alt={`${item.treatment} After`}
-          className="w-full h-full rounded-xl object-cover"
-        />
-
-        <span className="absolute top-3 left-3 bg-[rgb(28,150,140)] text-white text-xs px-3 py-1 rounded-full font-semibold">
-          After
-        </span>
-      </div>
-
-      {/* Footer */}
-      <div className="px-4 py-5 flex justify-between items-center">
-        <p>
-          Treatment:
-          <span className="font-bold ml-1">
-            {item.treatment}
-          </span>
-        </p>
-
-        <Button
-          text="View Case"
-          className="bg-gradient-to-r from-[#278981] to-[rgb(28,150,140)]"
-        />
-      </div>
-    </div>
-  ))}
-</div>
+<GalleryCard/>
     </div>
   )
 }

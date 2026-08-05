@@ -5,6 +5,12 @@ import Heading from '../components/Heading'
 import { FaCheck, FaWhatsapp } from 'react-icons/fa'
 import Button from '../components/Button'
 import { FaLocationArrow } from "react-icons/fa";
+import Aboutintroductionthree from '../AboutComponents/Aboutintroductionthree'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from 'react';
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 const featuresList = [
   { id: 1, text: "4 fully equipped dental chairs for comfortable care" },
   { id: 2, text: "Advanced implant & digital X-ray systems" },
@@ -12,79 +18,72 @@ const featuresList = [
   { id: 4, text: "Strict Class-B sterilization standards" },
   { id: 5, text: "Trusted by 5,000+ patients across Virar, Vasai, Nallasopara & Mumbai" },
 ]
-const statsData = [
+export const statsData = [
   {
     id: 1,
-    stat: "15+ Years",
+    stat: "5+ Years",
     line1: "Of Dental",
     line2: "Excellence",
   },
   {
     id: 2,
-    stat: "5,000+ Smiles",
-    line1: "Restored Across",
-    line2: "Region",
+    stat: "6,000+",
+    line1: "Happy",
+    line2: "Patients",
   },
   {
     id: 3,
-    stat: "4 Modern Units",
-    line1: "Designed  Comfort",
-    line2: "Precision",
+    stat: "100%",
+    line1: "Patient",
+    line2: "Focused Care",
   },
-]
+];
 const AboutContents = () => {
+   const sectionRef = useRef();
+  const aboutcontentone = useRef(); 
+  const aboutcontenttwo = useRef();
+    useGSAP(() => {
+    const tl = gsap.timeline();
+    gsap.from(aboutcontentone.current, {
+      opacity: 0,
+      scale: 0.95,
+      duration: 1,
+      ease: "power3.out",
+        y:-50,
+      scrollTrigger: {
+        trigger: aboutcontentone.current,
+        start: "top 65%",   // jab element ka top, viewport ke 80% pe pohanche
+        // end: "top 50%",
+        toggleActions: "play none none reverse",
+      }
+    });
+      gsap.from(aboutcontenttwo.current, {
+      opacity: 0,
+      scale: 0.95,
+      duration: 1,
+      y:50,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: aboutcontenttwo.current,
+        start: "top 65%",   // jab element ka top, viewport ke 80% pe pohanche
+        end: "top 50%",
+        toggleActions: "play none none reverse",
+      }
+    });
+  }, { scope: sectionRef });
   return (
-    <section className='w-full flex  justify-center pt-10 flex-wrap'>
-    <div className='w-[96%] lg:w-[94%] flex lg:flex-row flex-col-reverse justify-between flex-wrap'>
-<div className="w-full lg:w-[42%]   flex  items-center justify-center lg:justify-start ">
-    <div className='w-[95%] h-[80%] mt-4'>
-    <img src={aboutimage} alt=""   loading="lazy" className='w-full h-full rounded-2xl' />
-    </div>
-    
-</div>
-<div className='w-full lg:w-[50%]  lg:px-5'>
-     <div className="mt-5   inline-flex w-fit items-center gap-2 bg-teal-50 border border-teal-700 rounded-full px-9 py-2 shadow-sm">
-      <span className="text-teal-700  text-sm font-bold">Why Choose Us</span>
-    </div>
-    <Heading text="Why Choose  Dental  & Aesthetic Clinic" className=" text-3xl lg:text-5xl  pt-5 leading-tight text-[var(--secondary)] "/>
-    <div className='pt-4 font-medium text-[var(--text)]'>
-With over <span className='font-bold'>15 years of experience,</span>  our clinic combines expert care, advanced technology, and a patient-first approach to deliver world-class dental results right here in <span className='font-bold'>Virar West.</span>
-    </div>
-     <div className='pt-4 font-medium text-[var(--text)]'>
-     Whether it’s your first dental visit or a complex implant treatment, our focus is always on your comfort, safety, and satisfaction.
-    </div>
-        <div className="w-full pt-8">
-      {/* Checklist */}
-      <ul className="flex flex-col gap-6">
-        {featuresList.map((item) => (
-          <li key={item.id} className="flex items-start gap-4">
-            <FaCheck className="text-[var(--secondary)] mt-1.5 flex-shrink-0" size={18} />
-            <span className="text-[var(--text)] text-lg lg:text-normal">
-              {item.text}
-            </span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Button + WhatsApp */}
-      <div className="flex items-center justify-between mt-5 lg:mx-4 mb-3 py-3 flex-wrap gap-4">
-   <button className='font-bold  shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.12)] transition-all duration-300 cursor-pointer py-5 px-8 bg-gradient-to-r from-[#278981]  to-[rgb(28,150,140)] text-[var(--background)] rounded-xl'>Learn More about us</button>
-        </div>
-        </div>
-    </div>      
-  
-
-    </div>
-      <div className='w-[97%]  lg:p-2 text-[var(--background)]  '>
+    <section className='w-full flex  justify-center pt-20 flex-wrap'>
+<Aboutintroductionthree />
+      <div className='w-[97%]  lg:p-2 text-[var(--background)]  ' ref={sectionRef}>
 <div className='w-full rounded-2xl lg:px-8 pt-7 bg-gradient-to-b from-[#1c968c] pb-5 to-[#0f4c4a] flex justify-between flex-col lg:flex-row '>
-<div className='lg:w-[55%]  w-full lg:px-0 px-4'>
-        <Heading text="Book Your Dental" className="text-2xl lg:text-4xl leading-tight"/>
-        <Heading text="Appointment in Virar for a" className="text-2xl lg:text-4xl leading-tight"/>
-        <Heading text="Confident, Pain-Free Smile" className="text-2xl lg:text-4xl leading-tight"/>
-       <p className='pt-5'>
-        Take the next step toward the smile you’ve always wanted. At Mhatre Dental Clinic & Implant Centre, our expert team combines care, precision, and advanced technology to make every treatment smooth, safe, and truly rewarding.
+<div className='lg:w-[55%]  w-full lg:px-0 px-4' ref={aboutcontentone}>
+      <Heading text="Book Your Dental" className=" leading-7 text-xl lg:text-4xl lg:leading-tight" />
+<Heading text="Appointment with Dr. Shaheer" className=" leading-7 text-xl lg:text-4xl lg:leading-tight" />
+<Heading text="for a Healthy, Confident Smile" className="leading-7 text-xl lg:text-4xl lg:leading-tight" />
+       <p className='pt-7 lg:pt-7'>
+       Your smile deserves expert care. At Dr. Shaheer Dental Clinic, we provide advanced dental treatments with precision, compassion, and modern technology—helping you achieve a healthy, confident smile in a comfortable and trusted environment.
        </p>
-<div className='w-full  pt-10 flex gap-6 lg:flex-row flex-col'>
+<div className='w-full pt-14  lg:pt-10 flex gap-6 lg:flex-row flex-col'>
 
 
 {
@@ -109,7 +108,7 @@ With over <span className='font-bold'>15 years of experience,</span>  our clinic
 
 </div>
 </div>
-<div className='flex justify-center items-center lg:pt-0 pt-12 mb-5'>
+<div className='flex justify-center items-center lg:pt-0 pt-12 mb-5' ref={aboutcontenttwo}>
 <div className='w-[400px] h-[400px] rounded-full flex justify-center'>
 <img src={aboutgirl} alt=""   loading="lazy" className='h-[90%] w-[90%] lg:w-full lg:h-full  rounded-full bg-cover' />
 </div>
