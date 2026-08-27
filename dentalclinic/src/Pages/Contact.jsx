@@ -1,6 +1,5 @@
 import React from 'react'
 
-import teeth from '../assets/services images/teeth.png'
 import ContactPageComponentTwo from '../ContactComponents/ContactPageComponentTwo'
 import ContactPageComponent from '../ContactComponents/ContactPageComponent'
 import { useRef } from 'react';
