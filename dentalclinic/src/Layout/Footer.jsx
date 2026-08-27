@@ -7,9 +7,6 @@ import { IoMdMail } from "react-icons/io";
 import logo  from '../assets/images/logo.webp'
 import { MdEmail } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
-
-export default function Footer() {
-//   const quickLinks = ["Home", "About Us", "Our Services", "Contact"];
   const treatments = [
      "Root Canal Treatment",
         "Braces & Aligners",
@@ -19,7 +16,7 @@ export default function Footer() {
         "Wisdom Tooth Removal",
       
   ];
-const navborlinks = [
+  const navborlinks = [
     {
         links : "/",
         label :"Home",
@@ -41,10 +38,14 @@ const navborlinks = [
         label : "Cases"
     },
     {
-        llinks : "contact",
+        links : "contact",
         label : "Contact"
     }
 ]
+export default function Footer() {
+
+
+
   return (
     <>
         <section className="w-[100%] flex justify-center  ">

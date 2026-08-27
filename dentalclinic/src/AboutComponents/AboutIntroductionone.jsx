@@ -8,6 +8,7 @@ const AboutIntroductionone = () => {
          const sectionRef = useRef();
       const aboutcontentone = useRef(); 
       const aboutcontenttwo = useRef();
+      
         useGSAP(() => {
         gsap.from(aboutcontentone.current, {
           opacity: 0.4,

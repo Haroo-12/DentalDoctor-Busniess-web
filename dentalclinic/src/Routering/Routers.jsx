@@ -1,58 +1,57 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-// import Navbor from '../Layout/Navbor'
-import Home from '../Pages/Home'
-import About from '../Pages/About'
-// import Footer from '../Layout/Footer'
 import MainLayout from '../Layout/MainLayout'
-import Services from '../Pages/Services'
-import Testomonials from '../Pages/Testomonials'
-import Cases from '../Pages/Cases'
-import Contact from '../Pages/Contact'
-import GalleryCardDetail from '../GalleryComponents/GalleryCardDetail'
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-[#0c0b0a]">
+    <p className="text-[var(--textwhite)] font-body text-sm tracking-[0.3em] uppercase">
+      Loading...
+    </p>
+  </div>
+)
 
 const Routers = () => {
-const routes = createBrowserRouter([
+  const routes = createBrowserRouter([
     {
-        path : "/",
-        element : <MainLayout/>,
-        children : [
-            {
-              index : true,
-              element : <Home/> 
-            },
-            {
-              path : "/about",
-              element : <About/>
-            },
-            {
-            path : "/services",
-            element : <Services/>
-            },
-            {
-              path : "/testomonials",
-              element : <Testomonials/>
-            },
-            {
-              path : "/cases",
-              element : <Cases/>,
-            },
-            {
-              path : "/cases/:id",
-              element : <GalleryCardDetail/>
-            },
-            {
-              path : "/contact",
-              element : <Contact/>
-            }
-        ],
-    
-    }
-])
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        {
+          index: true,
+          lazy: () => import('../Pages/Home').then(m => ({ Component: m.default }))
+        },
+        {
+          path: "/about",
+          lazy: () => import('../Pages/About').then(m => ({ Component: m.default }))
+        },
+        {
+          path: "/testomonials",
+          lazy: () => import('../Pages/Testomonials').then(m => ({ Component: m.default }))
+        },
+        {
+          path: "/contact",
+          lazy: () => import('../Pages/Contact').then(m => ({ Component: m.default }))
+        },
+        {
+          path: "/services",
+          lazy: () => import('../Pages/Services').then(m => ({ Component: m.default }))
+        },
+        {
+          path: "/cases",
+          lazy: () => import('../Pages/Cases').then(m => ({ Component: m.default }))
+        },
+        {
+          path: "/cases/:id",
+          lazy: () => import('../GalleryComponents/GalleryCardDetail').then(m => ({ Component: m.default }))
+        },
+      ],
+    },
+  ])
+
   return (
     <div>
-      <RouterProvider router={routes} />   
-         </div>
+      <RouterProvider router={routes} />
+    </div>
   )
 }
 

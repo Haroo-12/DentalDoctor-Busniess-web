@@ -8,9 +8,6 @@ import logo  from '../assets/images/logo.webp'
 import Button from '../components/Button';
 import { BsList } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
-
-const Navbor = () => {
-const navigate = useNavigate()
 const navborlinks = [
     {
         links : "/",
@@ -37,6 +34,9 @@ const navborlinks = [
         label : "Contact"
     }
 ]
+const Navbor = () => {
+const navigate = useNavigate()
+
 let [loading , setloading] = useState(true)
 const [menu, setMenu] = useState(false);
 function handleNav(){

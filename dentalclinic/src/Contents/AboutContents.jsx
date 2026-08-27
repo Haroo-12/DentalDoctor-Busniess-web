@@ -1,8 +1,6 @@
 import React from 'react'
-import aboutimage from '../assets/images/Aboutimage.webp'
 import aboutgirl from '../assets/images/aboutgirl.webp'
 import Heading from '../components/Heading'
-import { FaCheck, FaWhatsapp } from 'react-icons/fa'
 import Button from '../components/Button'
 import { FaLocationArrow } from "react-icons/fa";
 import Aboutintroductionthree from '../AboutComponents/Aboutintroductionthree'
@@ -11,13 +9,6 @@ import { useRef } from 'react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-const featuresList = [
-  { id: 1, text: "4 fully equipped dental chairs for comfortable care" },
-  { id: 2, text: "Advanced implant & digital X-ray systems" },
-  { id: 3, text: "Painless single-sitting root canal procedures" },
-  { id: 4, text: "Strict Class-B sterilization standards" },
-  { id: 5, text: "Trusted by 5,000+ patients across Virar, Vasai, Nallasopara & Mumbai" },
-]
 export const statsData = [
   {
     id: 1,
@@ -43,7 +34,6 @@ const AboutContents = () => {
   const aboutcontentone = useRef(); 
   const aboutcontenttwo = useRef();
     useGSAP(() => {
-    const tl = gsap.timeline();
     gsap.from(aboutcontentone.current, {
       opacity: 0,
       scale: 0.95,

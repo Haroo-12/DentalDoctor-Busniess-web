@@ -3,8 +3,7 @@ import React from 'react'
 import aboutimage from '../assets/images/Aboutimage.webp'
 import aboutgirl from '../assets/images/aboutgirl.webp'
 import Heading from '../components/Heading'
-import { FaCheck, FaWhatsapp } from 'react-icons/fa'
-import Button from '../components/Button'
+import { FaCheck, } from 'react-icons/fa'
 import { FaLocationArrow } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
 import { ScrollTrigger } from "gsap/ScrollTrigger";

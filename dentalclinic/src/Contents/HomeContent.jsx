@@ -53,7 +53,7 @@ gsap.from(herotwo.current, {
     duration: 1,
     y: 50,
     scale : 0.9,
-    ease: "power2.out",
+    ease: "power3.out",
   });
 }, { scope: heroRef });
 const navigate = useNavigate()
@@ -103,12 +103,12 @@ const navigate = useNavigate()
 </div> 
 <div className='w-full flex justify-center items-center lg:w-[45%] pt-15 lg:pt-0' ref={herotwo}>
   <div className="relative w-full lg:w-[90%] aspect-[4/3] lg:aspect-auto lg:h-[80%]">
-    <img
-      src={heroimg}
-      alt=""
-      className="w-full h-full object-cover rounded-3xl shadow-xl"
-    
-    />
+<img
+  src={heroimg}
+  alt="Dr. Shaheer Dental Clinic"
+  fetchpriority="high"
+  className="w-full h-full object-cover rounded-3xl shadow-xl"
+/>
 
     <div className="absolute top-6 left-6 bg-white px-4 py-2 rounded-xl shadow-lg">
       ⭐ 5.0 Rating

@@ -10,7 +10,6 @@ const Aboutintroductiontwo = () => {
   const aboutcontentone = useRef(); 
   const aboutcontenttwo = useRef();
     useGSAP(() => {
-    const tl = gsap.timeline();
     gsap.from(aboutcontentone.current, {
       opacity: 0,
       scale: 0.9,
@@ -41,7 +40,7 @@ const Aboutintroductiontwo = () => {
        <div className='w-full lg:w-[96%] gap-8  mt-25 flex flex-col-reverse lg:flex-row  justify-between px-2 lg:px-0' ref={sectionRef}>
 <div className='w-full lg:w-[45%]  flex justify-center'>
 <div className='w-[97%]  lg:w-[90%] lg:h-[70%]' ref={aboutcontentone}>
-  <img src={Aboutimageone} alt="" className='w-full h-full rounded-xl object-cover' />
+  <img src={Aboutimageone} alt="dr shaheer" className='w-full h-full rounded-xl object-cover' />
 </div>
 </div>
 <div className='w-full lg:w-[50%]  pb-4' ref={aboutcontenttwo}>
