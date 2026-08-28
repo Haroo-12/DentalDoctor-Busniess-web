@@ -60,41 +60,32 @@ const ServicesCard = () => {
     navigate("/contact#contact-form");
   }, [navigate]);
 
-  useGSAP(() => {
-    const mm = gsap.matchMedia();
+useGSAP(() => {
+  const mm = gsap.matchMedia();
 
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
-      ScrollTrigger.batch(".service-card", {
-        start: "top 85%",
-        onEnter: (batch) =>
-          gsap.from(batch, {
-            opacity: 0,
-            scale: 0.95,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power3.out",
-          }),
-        onLeaveBack: (batch) =>
-          gsap.to(batch, {
-            opacity: 0,
-            scale: 0.95,
-            duration: 0.5,
-            stagger: 0.1,
-            ease: "power3.out",
-          }),
-      });
+  mm.add("(prefers-reduced-motion: no-preference)", () => {
+    ScrollTrigger.batch(".service-card", {
+      start: "top 85%",
+      once: true,
+      onEnter: (batch) =>
+        gsap.from(batch, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 1,
+          stagger: 0.1,
+          ease: "power3.out",
+        }),
     });
+  });
 
-    // Agar page already load ho chuka hai (SPA navigation case),
-    // to seedha refresh karo. Warna load event ka wait karo.
-    if (document.readyState === "complete") {
-      ScrollTrigger.refresh();
-    } else {
-      const handleLoad = () => ScrollTrigger.refresh();
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
-  }, { scope: sectionRef });
+  if (document.readyState === "complete") {
+    ScrollTrigger.refresh();
+  } else {
+    const handleLoad = () => ScrollTrigger.refresh();
+    window.addEventListener("load", handleLoad);
+    return () => window.removeEventListener("load", handleLoad);
+  }
+}, { scope: sectionRef });
 
   return (
     <section
