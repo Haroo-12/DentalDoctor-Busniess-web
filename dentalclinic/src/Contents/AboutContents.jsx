@@ -94,7 +94,7 @@ const AboutContents = () => {
 
 </div>
 <div className='w-full justify-center flex  lg:justify-start'>
-<button className='flex justify-center items-center cursor-pointer mt-7 gap-4 font-bold text-[var(--secondary)] px-8 py-6 rounded-full bg-white'>Book Appointment <span className='font-bold text-xl'><FaLocationArrow/></span> </button>
+<button className='flex justify-center items-center cursor-pointer mt-7 gap-4 font-bold text-[var(--secondary)] px-8 py-6 rounded-full bg-white' onClick={()=>{navigate("/contact#contact-form")}}>Book Appointment <span className='font-bold text-xl'><FaLocationArrow/></span> </button>
 
 </div>
 </div>
