@@ -1,11 +1,11 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainLayout from '../Layout/MainLayout'
-
+import { BeatLoader } from "react-spinners";
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#0c0b0a]">
     <p className="text-[var(--textwhite)] font-body text-sm tracking-[0.3em] uppercase">
-      Loading...
+    <BeatLoader color="#fff" size={8} />
     </p>
   </div>
 )

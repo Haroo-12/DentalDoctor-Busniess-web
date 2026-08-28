@@ -4,11 +4,12 @@ import drshaheer from '../assets/Aboutimages/drshaheer.webp'
 import { useRef } from 'react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useNavigate } from 'react-router-dom';
 const AboutIntroductionone = () => {
          const sectionRef = useRef();
       const aboutcontentone = useRef(); 
       const aboutcontenttwo = useRef();
-      
+      const navigate = useNavigate()
         useGSAP(() => {
         gsap.from(aboutcontentone.current, {
           opacity: 0.4,
@@ -37,7 +38,7 @@ const AboutIntroductionone = () => {
 </h1>
 <p className='pt-5 p-2 text-[var(--text)]'>Dr. Shaheer is a highly qualified Dental Surgeon and Implantologist in Hyderabad, Sindh. With advanced training in cosmetic dentistry, dental implants, root canal treatments, braces, wisdom tooth surgery, and jaw correction procedures, he is dedicated to delivering exceptional dental care and long-lasting smile transformations for every patient.</p>
 {/* <button className=''>Book Now</but/ton> */}
-<Button text="Book Now" className="backgroundcol mt-5 mx-2"/>
+<Button text="Book Now" className="backgroundcol w-full lg:w-[40%] mt-5 mx-2" onClick={()=>{navigate("/contact#contact-form")}}/>
 </div>
 <div className='w-full lg:w-[40%] flex justify-center items-center pt-8' ref={aboutcontenttwo}>
 <div className='h-[300px] w-[300px] lg:w-[370px] lg:h-[370px]  rounded-full'>

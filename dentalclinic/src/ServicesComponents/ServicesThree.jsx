@@ -3,14 +3,15 @@ import drshaheer from '../assets/Aboutimages/drshaheer.webp'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
+import { useNavigate } from 'react-router-dom';
+import Button from '../components/Button';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const ServicesThree = () => {
   const sectionRef = useRef();
   const textRef = useRef();
   const imageRef = useRef();
-
+const navigate = useNavigate()
   useGSAP(() => {
     gsap.from(textRef.current, {
       opacity: 0,
@@ -59,12 +60,8 @@ const ServicesThree = () => {
       comfort, and a commitment to long-lasting results.
     </p>
 
-    <button
-      type="button"
-      className="backgroundcol mt-5 cursor-pointer rounded-2xl px-10 py-3 text-[var(--background)] shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(0,0,0,0.12)] lg:px-9 lg:py-4 lg:font-bold"
-    >
-      Book now
-    </button>
+<Button text="Book Now" className="backgroundcol w-full lg:w-[40%] mt-5 mx-2" onClick={()=>{navigate("/contact#contact-form")}}/>
+
   </div>
 
   <div className="h-[300px] w-[300px] overflow-hidden rounded-full lg:h-[350px] lg:w-[350px]" ref={imageRef}>
