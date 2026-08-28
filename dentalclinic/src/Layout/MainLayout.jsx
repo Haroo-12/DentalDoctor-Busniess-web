@@ -12,13 +12,13 @@ const MainLayout = () => {
       <ScrollToTop />
     <Navbor/>
 
-      {isLoading && (
-        <div className="fixed inset-0 z-[9999]  flex items-center justify-center">
-          <p className="text-black font-body text-sm tracking-[0.3em] uppercase">
-            Loading...
-          </p>
-        </div>
-      )}
+   {isLoading && (
+  <div className="fixed inset-0 z-[9999] bg-white flex items-center justify-center">
+    <p className="text-black font-body text-sm tracking-[0.3em] uppercase">
+      Loading...
+    </p>
+  </div>
+)}
 
       <Outlet />
       <Footer />

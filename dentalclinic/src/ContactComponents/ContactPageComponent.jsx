@@ -11,7 +11,7 @@ const sidebarInfo = {
   description:
     'Fill out the form to create your appointment request. Clicking "Book on WhatsApp" will open a pre-filled chat with our receptionist.',
   contacts: [
-    { id: 1, icon: FaEnvelope, value: "info@smileprodental.pk" },
+    { id: 1, icon: FaEnvelope, value: "shaheermemon2233@gmail.com" },
     { id: 2, icon: FaPhone, value: "+92 333 2669991 (Main)" },
   ],
 };

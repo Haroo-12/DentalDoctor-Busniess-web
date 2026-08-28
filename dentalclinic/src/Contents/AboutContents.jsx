@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from 'react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useNavigate } from 'react-router-dom';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 export const statsData = [
   {
@@ -33,6 +34,7 @@ const AboutContents = () => {
    const sectionRef = useRef();
   const aboutcontentone = useRef(); 
   const aboutcontenttwo = useRef();
+  const navigate = useNavigate()
     useGSAP(() => {
     gsap.from(aboutcontentone.current, {
       opacity: 0,
