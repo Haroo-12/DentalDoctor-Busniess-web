@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import Navbor from './Navbor'
 import { Outlet, useNavigation } from 'react-router-dom'
 import Footer from './Footer'
@@ -10,18 +10,20 @@ const MainLayout = () => {
   return (
     <div>
       <ScrollToTop />
-    <Navbor/>
+      <Navbor/>
 
-   {isLoading && (
-  <div className="fixed inset-0 z-[9999] bg-white flex items-center justify-center">
-    <p className="text-black font-body text-sm tracking-[0.3em] uppercase">
-      Loading...
-    </p>
-  </div>
-)}
-
-      <Outlet />
-      <Footer />
+      {isLoading ? (
+        <div className="min-h-screen bg-white flex items-center justify-center">
+          <p className="text-black font-body text-sm tracking-[0.3em] uppercase">
+            Loading...
+          </p>
+        </div>
+      ) : (
+        <>
+          <Outlet />
+          <Footer />
+        </>
+      )}
     </div>
   )
 }

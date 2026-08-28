@@ -99,11 +99,12 @@ function handleNav(){
   to="/contact"
   onClick={() => setloading(true)}
 >
+</Link>
+
   <Button
     text="Book Appointment"
     className="w-full bg-gradient-to-r rounded from-[#278981] to-[#1c968c] py-4 font-bold"
   onClick={()=>{navigate("/contact#contact-form")}} />
-</Link>
   </li>
 </ul>
     )
