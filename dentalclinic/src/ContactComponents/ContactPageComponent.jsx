@@ -18,12 +18,12 @@ const sidebarInfo = {
 
 // ✅ Options bhi static hain, bahar theek hai
 const treatmentOptions = [
-  "Dental Implants",
-  "Root Canal",
-  "Teeth Whitening",
-  "Braces",
-  "Smile Makeover",
-  "Scaling & Polishing",
+"Root Canal Treatment",
+"Braces & Aligners",
+"Dental Implants",
+"Gum Surgery",
+"Scaling & Polishing",
+"Wisdom Tooth Removal"
 ];
 
 const ContactPageComponent = () => {
@@ -32,7 +32,6 @@ const ContactPageComponent = () => {
   const [treatment, settreatment] = useState("");
   const [date, setdates] = useState("");
   const [message, setmessage] = useState("");
-
   const location = useLocation();
 
   useEffect(() => {
