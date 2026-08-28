@@ -15,7 +15,7 @@ const MainLayout = () => {
       {isLoading ? (
         <div className="min-h-screen bg-white flex items-center justify-center">
           <p className="text-black font-body text-sm tracking-[0.3em] uppercase">
-               <BeatLoader color="#fff" size={8} />
+               <BeatLoader  size={10} color='#14B8A6' />
 
           </p>
         </div>

@@ -5,7 +5,7 @@ import { BeatLoader } from "react-spinners";
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#0c0b0a]">
     <p className="text-[var(--textwhite)] font-body text-sm tracking-[0.3em] uppercase">
-    <BeatLoader color="#fff" size={8} />
+    <BeatLoader color='#14B8A6' size={10} />
     </p>
   </div>
 )
