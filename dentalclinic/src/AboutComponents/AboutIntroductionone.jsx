@@ -38,7 +38,7 @@ const AboutIntroductionone = () => {
 </h1>
 <p className='pt-5 p-2 text-[var(--text)]'>Dr. Shaheer is a highly qualified Dental Surgeon and Implantologist in Hyderabad, Sindh. With advanced training in cosmetic dentistry, dental implants, root canal treatments, braces, wisdom tooth surgery, and jaw correction procedures, he is dedicated to delivering exceptional dental care and long-lasting smile transformations for every patient.</p>
 {/* <button className=''>Book Now</but/ton> */}
-<Button text="Book Now" className="backgroundcol w-full lg:w-[40%] mt-5 mx-2" onClick={()=>{navigate("/contact#contact-form")}}/>
+<Button text="Book Now" className="backgroundcol w-[95%] py-4 lg:w-[40%] mt-5 mx-2" onClick={()=>{navigate("/contact#contact-form")}}/>
 </div>
 <div className='w-full lg:w-[40%] flex justify-center items-center pt-8' ref={aboutcontenttwo}>
 <div className='h-[300px] w-[300px] lg:w-[370px] lg:h-[370px]  rounded-full'>

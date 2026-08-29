@@ -60,7 +60,7 @@ const navigate = useNavigate()
       comfort, and a commitment to long-lasting results.
     </p>
 
-<Button text="Book Now" className="backgroundcol w-full lg:w-[40%] mt-5 mx-2" onClick={()=>{navigate("/contact#contact-form")}}/>
+<Button text="Book Now" className="backgroundcol w-[95%] lg:w-[40%] mt-5 mx-2 py-4" onClick={()=>{navigate("/contact#contact-form")}}/>
 
   </div>
 
